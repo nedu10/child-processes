@@ -6,6 +6,8 @@ const data = JSON.stringify(get_item);
 
 const fork = cp.fork("test.js", [data], { cwd: "../modules" });
 
+console.log("fork >> ", fork);
+
 fork.on("exit", () => {
   console.log("child process successfully exited");
 });
